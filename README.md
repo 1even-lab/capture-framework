@@ -13,8 +13,8 @@ who make decisions.
 
 Designed editions:
 
-- **Web:** [1even-lab.github.io/capture-framework](https://1even-lab.github.io/capture-framework/) —
-  the Russian edition is readable online
+- **Web:** [English](https://1even-lab.github.io/capture-framework/en/) ·
+  [Русский](https://1even-lab.github.io/capture-framework/ru/)
 - **PDF (English):** [download](https://github.com/1even-lab/capture-framework/releases/latest/download/CAPTURE-Agentic-Analytics-Framework-1.0.pdf)
   from the latest [release](https://github.com/1even-lab/capture-framework/releases/latest)
 

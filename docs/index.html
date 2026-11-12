@@ -49,7 +49,7 @@
 
   .read { margin-top: 72px; }
   .read h2 { margin-bottom: 16px; font-weight: 400; }
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .card { display: flex; flex-direction: column; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; color: var(--text); text-decoration: none; transition: background .15s, border-color .15s; }
   a.card:hover, a.card:focus-visible { background: var(--panel-hover); border-color: var(--accent); outline: none; }
   .card strong { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; }
@@ -107,15 +107,20 @@
     <section class="read" aria-labelledby="read-h">
       <h2 id="read-h" class="mono">Read the framework</h2>
       <div class="cards">
-        <a class="card" href="https://github.com/1even-lab/capture-framework/releases/latest/download/CAPTURE-Agentic-Analytics-Framework-1.0.pdf">
-          <strong>English · PDF</strong>
-          <p>The designed edition, 38 pages.</p>
-          <span class="go">Download →</span>
+        <a class="card" href="en/">
+          <strong>English</strong>
+          <p>The full framework, read online.</p>
+          <span class="go">Open →</span>
         </a>
         <a class="card" href="ru/" lang="ru">
           <strong>Русская версия</strong>
           <p>Дизайн-версия документа, читать онлайн.</p>
           <span class="go">Открыть →</span>
+        </a>
+        <a class="card" href="https://github.com/1even-lab/capture-framework/releases/latest/download/CAPTURE-Agentic-Analytics-Framework-1.0.pdf">
+          <strong>PDF · English</strong>
+          <p>The designed edition, 38 pages.</p>
+          <span class="go">Download →</span>
         </a>
         <div class="card">
           <strong>Text on GitHub</strong>
