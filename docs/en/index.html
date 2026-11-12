@@ -110,7 +110,11 @@ blockquote.slogan{color:var(--accent);font-size:26px}
 .closing{margin-top:96px;padding:72px 0 64px;border-top:1px solid var(--border);text-align:center}
 .closing .brand-mark svg{width:100px;height:28px}
 .closing h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(34px,7vw,52px);line-height:1.05;letter-spacing:-.02em;margin-top:26px}
-.closing .line{color:var(--muted);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;margin-top:16px}
+.closing .line{color:var(--muted);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;line-height:1.45;max-width:392px;margin:18px auto 0}
+.steps{list-style:none;counter-reset:step;padding:22px 0!important;margin:28px 0 0!important;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.steps li{counter-increment:step;display:flex;gap:24px;align-items:baseline;margin:0!important;padding:5px 0}
+.steps li::before{content:counter(step,decimal-leading-zero);font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--accent);min-width:18px}
+.steps + p{margin-top:24px!important}
 .closing .slogan-line{font-size:30px;margin-top:40px}
 .closing .mono{margin-top:14px}
 footer{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;border-top:1px solid var(--border);padding:22px 0 48px}
@@ -436,22 +440,14 @@ footer .dot{color:var(--border)}
 <p>You do not need to begin with a new platform.</p>
 <p>You do not need to document the entire company's semantics in advance.</p>
 <p>You do not need to connect hundreds of users on day one.</p>
-<p>Start with someone who knows your data well.</p>
-<p>Give them an approved AI environment.</p>
-<p>Connect it to real corporate data.</p>
-<p>Take a real business question.</p>
-<p>See what happens.</p>
-<p>Verify the answer.</p>
-<p>Find the gap.</p>
-<p>Teach the system.</p>
-<p>Repeat.</p>
+<ol class="steps"><li>Start with someone who knows your data well.</li><li>Give them an approved AI environment.</li><li>Connect it to real corporate data.</li><li>Take a real business question.</li><li>See what happens.</li><li>Verify the answer.</li><li>Find the gap.</li><li>Teach the system.</li><li>Repeat.</li></ol>
 <p>Then scale what has proven to work.</p>
 </section>
 
     <div class="closing">
       <div class="brand-mark"><svg viewBox="0 0 100 28" fill="none" aria-hidden="true"><path d="M2 14 Q15 3 28 14 Q15 25 2 14 Z" stroke="#F2F4F8" stroke-width="2"/><circle cx="15" cy="14" r="5" fill="#D6FF3D"/><line x1="32.5" y1="5.5" x2="32.5" y2="22.5" stroke="#F2F4F8" stroke-width="1.5"/><path d="M37 14 Q50 3 63 14 Q50 25 37 14 Z" stroke="#F2F4F8" stroke-width="2"/><circle cx="50" cy="14" r="5" fill="#D6FF3D"/><line x1="67.5" y1="5.5" x2="67.5" y2="22.5" stroke="#F2F4F8" stroke-width="1.5"/><path d="M72 14 Q85 3 98 14 Q85 25 72 14 Z" stroke="#F2F4F8" stroke-width="2"/><circle cx="85" cy="14" r="5" fill="#D6FF3D"/></svg></div>
       <h2>Start with one analyst.</h2>
-      <p class="line">One connector. Real company data. Real business questions.</p>
+      <p class="line">Analytics is no longer just a function.<br>It becomes a capability available across the organization.</p>
       <p class="slogan-line">Connect. Play. Scale.</p>
       <p class="mono">The CAPTURE Framework</p>
     </div>
