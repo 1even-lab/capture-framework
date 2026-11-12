@@ -11,6 +11,13 @@ who make decisions.
 - **English:** [CAPTURE-Framework.md](CAPTURE-Framework.md)
 - **Русский:** [CAPTURE-Framework.ru.md](CAPTURE-Framework.ru.md)
 
+Designed editions:
+
+- **Web:** [1even-lab.github.io/capture-framework](https://1even-lab.github.io/capture-framework/) —
+  the Russian edition is readable online
+- **PDF (English):** [download](https://github.com/1even-lab/capture-framework/releases/latest/download/CAPTURE-Agentic-Analytics-Framework-1.0.pdf)
+  from the latest [release](https://github.com/1even-lab/capture-framework/releases/latest)
+
 Version 1.0. Both editions describe the same framework. The English edition is the fuller
 one; the Russian edition is a more concise editorial version, not a line-by-line translation.
 
@@ -93,3 +100,6 @@ distribute adaptations under the same license.
 
 Suggested attribution: *The CAPTURE Framework by Denis Kravchenko, 1even.lab
 (github.com/1even-lab/capture-framework), CC BY-SA 4.0.*
+
+The license covers the text. It does not cover the 1even.lab name and logo, and third-party
+components used by the web pages in `docs/` (fonts, libraries) keep their own licenses.

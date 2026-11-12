@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Analytics — The CAPTURE Framework</title>
+<meta name="description" content="The CAPTURE Framework: a practical framework for implementing Agentic Analytics. Connect. Play. Scale.">
+<meta property="og:title" content="Agentic Analytics — The CAPTURE Framework">
+<meta property="og:description" content="A practical framework for implementing Agentic Analytics. Connect. Play. Scale.">
+<meta property="og:type" content="website">
+<style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 400 700; font-display: swap; src: url('assets/fonts/SpaceGrotesk-latin.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 400 600; font-display: swap; src: url('assets/fonts/Inter-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+2013-2014, U+2018-201D, U+2022, U+2026; }
+  @font-face { font-family: 'Inter'; font-weight: 400 600; font-display: swap; src: url('assets/fonts/Inter-cyrillic.woff2') format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: 'JetBrains Mono'; font-weight: 400 500; font-display: swap; src: url('assets/fonts/JetBrainsMono-latin.woff2') format('woff2'); }
+
+  :root {
+    --bg: #0E1116; --panel: #151A22; --panel-hover: #1A1F29; --line: #2A3140;
+    --text: #F2F4F8; --muted: #8B94A7; --accent: #D6FF3D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--bg); }
+  body {
+    min-height: 100vh; color: var(--text); background: var(--bg);
+    background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+    background-size: 96px 96px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px 56px; display: flex; flex-direction: column; min-height: 100vh; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand svg { width: 64px; height: 18px; display: block; }
+  .brand span { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; color: var(--text); letter-spacing: -.01em; }
+  .brand span i { font-style: normal; color: var(--accent); }
+
+  main { flex: 1; padding: 88px 0 64px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 8vw, 68px); line-height: 1.04; letter-spacing: -.02em; }
+  .sub { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(24px, 4.4vw, 36px); line-height: 1.15; color: var(--accent); margin-top: 10px; letter-spacing: -.01em; }
+  .lead { color: var(--muted); font-size: 18px; max-width: 620px; margin-top: 22px; }
+
+  .stages { list-style: none; display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-top: 56px; }
+  .stages li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 6px 16px; text-align: center; }
+  .stages b { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 34px; line-height: 1; }
+  .stages span { display: block; margin-top: 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); line-height: 1.35; }
+  .slogan { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px; color: var(--accent); margin-top: 28px; }
+
+  .read { margin-top: 72px; }
+  .read h2 { margin-bottom: 16px; font-weight: 400; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card { display: flex; flex-direction: column; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; color: var(--text); text-decoration: none; transition: background .15s, border-color .15s; }
+  a.card:hover, a.card:focus-visible { background: var(--panel-hover); border-color: var(--accent); outline: none; }
+  .card strong { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px; }
+  .card p { color: var(--muted); font-size: 14px; }
+  .card .links { margin-top: 4px; font-size: 15px; }
+  .card .links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  .card .links a:hover, .card .links a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+  .card .go { margin-top: auto; padding-top: 14px; color: var(--accent); font-size: 14px; }
+
+  footer { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; border-top: 1px solid var(--line); padding-top: 22px; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover, footer a:focus-visible { color: var(--text); outline: none; }
+  footer .dot { color: var(--line); }
+
+  @media (max-width: 760px) {
+    main { padding: 56px 0 48px; }
+    .stages { grid-template-columns: repeat(4, 1fr); }
+    .cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 420px) { .stages { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="https://1evenlab.com" aria-label="1even.lab">
+      <svg viewBox="0 0 100 28" fill="none" aria-hidden="true">
+        <path d="M2 14 Q15 3 28 14 Q15 25 2 14 Z" stroke="#F2F4F8" stroke-width="2"/><circle cx="15" cy="14" r="5" fill="#D6FF3D"/>
+        <line x1="32.5" y1="5.5" x2="32.5" y2="22.5" stroke="#F2F4F8" stroke-width="1.5"/>
+        <path d="M37 14 Q50 3 63 14 Q50 25 37 14 Z" stroke="#F2F4F8" stroke-width="2"/><circle cx="50" cy="14" r="5" fill="#D6FF3D"/>
+        <line x1="67.5" y1="5.5" x2="67.5" y2="22.5" stroke="#F2F4F8" stroke-width="1.5"/>
+        <path d="M72 14 Q85 3 98 14 Q85 25 72 14 Z" stroke="#F2F4F8" stroke-width="2"/><circle cx="85" cy="14" r="5" fill="#D6FF3D"/>
+      </svg>
+      <span>1even<i>.lab</i></span>
+    </a>
+    <div class="mono">Whitepaper · v1.0</div>
+  </header>
+
+  <main>
+    <h1>Agentic Analytics</h1>
+    <p class="sub">The CAPTURE Framework</p>
+    <p class="lead">A practical framework for implementing Agentic Analytics — from connecting the first analyst to real corporate data to a governed analytical capability available directly to decision-makers.</p>
+
+    <ol class="stages" aria-label="The seven stages of CAPTURE">
+      <li><b>C</b><span>Connect</span></li>
+      <li><b>A</b><span>Apply</span></li>
+      <li><b>P</b><span>Prove</span></li>
+      <li><b>T</b><span>Team Scale</span></li>
+      <li><b>U</b><span>Unify</span></li>
+      <li><b>R</b><span>Restrict &amp; Govern</span></li>
+      <li><b>E</b><span>Expand</span></li>
+    </ol>
+    <p class="slogan">Connect. Play. Scale.</p>
+
+    <section class="read" aria-labelledby="read-h">
+      <h2 id="read-h" class="mono">Read the framework</h2>
+      <div class="cards">
+        <a class="card" href="https://github.com/1even-lab/capture-framework/releases/latest/download/CAPTURE-Agentic-Analytics-Framework-1.0.pdf">
+          <strong>English · PDF</strong>
+          <p>The designed edition, 38 pages.</p>
+          <span class="go">Download →</span>
+        </a>
+        <a class="card" href="ru/" lang="ru">
+          <strong>Русская версия</strong>
+          <p>Дизайн-версия документа, читать онлайн.</p>
+          <span class="go">Открыть →</span>
+        </a>
+        <div class="card">
+          <strong>Text on GitHub</strong>
+          <p>Plain text of both editions, with version history.</p>
+          <p class="links"><a href="https://github.com/1even-lab/capture-framework/blob/main/CAPTURE-Framework.md">English</a> · <a href="https://github.com/1even-lab/capture-framework/blob/main/CAPTURE-Framework.ru.md" lang="ru">Русский</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mono">
+    <a href="https://1evenlab.com">1evenlab.com</a><span class="dot">·</span>
+    <a href="https://github.com/1even-lab/capture-framework">GitHub</a><span class="dot">·</span>
+    <a href="https://github.com/1even-lab/capture-framework/blob/main/LICENSE">CC BY-SA 4.0</a><span class="dot">·</span>
+    <span>2026</span>
+  </footer>
+</div>
+</body>
+</html>

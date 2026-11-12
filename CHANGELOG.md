@@ -14,3 +14,5 @@ First public release.
 - Seven stages: Connect, Apply, Prove, Team Scale, Unify, Restrict & Govern, Expand.
 - Architecture of Agentic Analytics, operating principles, expected outcomes and the link to
   AI-native transformation.
+- Designed editions: the English PDF as a release asset, and the Russian edition readable
+  online at https://1even-lab.github.io/capture-framework/ru/.
